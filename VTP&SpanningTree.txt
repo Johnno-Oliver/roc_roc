@@ -1,0 +1,64 @@
+VTP 
+
+Ga naar de MLS 
+
+enable 
+conf t 
+vlan (juiste vlan nummer) 
+name vlan (naam)
+
+
+Volgende vlan 
+vlan (volgende vlan nummer)
+name vlan (naam) 
+
+enzozvoort tot alle vlans zijn gebruikt en benoemd. 
+
+controleer het werk 
+do show vlan brief 
+
+
+ 
+ 
+ 
+ Op de MLS Een Server aanmaken in VTP Modus. 
+ 
+ conf t 
+ vtp version 2
+ vtp domain (Domain naam)
+ vtp mode Server
+ 
+ Op de Switches
+ VTP Version 2 
+ VTP Mode Client 
+ VTP Domain (Domain naam)
+ 
+ 
+ 3 modus 
+ Client Luisterd. op examen allen client & Server
+ Server Eerste plaats- Server bepaald alles.
+ Transparant Alleen doorgeven Verder niks.
+ 
+ 
+ Spanning Tree 
+ MLS 
+ spanning-tree vlan (nummer van vlans) root primary voor de root op de MLS 
+ spanning-tree vlan (nummer van vlans) priority (nummer van priority) 
+ 
+ 
+ op de switches 
+ spanning-tree vlan 1-100 priority nummer van prio 
+ 
+ 
+ 
+ Vlan koppelen aan switchpoorten 
+In de Switch 
+Interface range fa (nummer) - fa (nummer)
+description vlan (nummmer)  
+switchport acces vlan (nummer) poorten 1 tot 10 voorbeeld mogen gebruikt worden. 
+switchport mode acces 
+
+end 
+show run 
+copy paste volgende switches 
+copy run start op einde 

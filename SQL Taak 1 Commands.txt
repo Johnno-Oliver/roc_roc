@@ -1,0 +1,72 @@
+Les 1	Onderwerpen:		
+SELECT, *, DISTINCT, AS, WHERE, = ‘text-criteria‘, ORDER BY
+
+--- Van alle vragen willen wij de vraag incl. SQL-statement hebben ---
+1.	Toon de achternaam van alle acteurs
+Select last_name from actor 
+
+2.	Toon de naam van alle films
+Select title from film;
+3.	Toon alle gegevens uit de tabel adressen
+Select * from address
+
+4.	Toon de staff-id en store-id van al het personeel
+Select staff_id, store_id from staff
+5.	Toon de voornaam en achternaam van al het personeel
+Select first_name, last_name from staff
+6.	Toon het adres, postcode en city code uit de tabel adressen
+select address, postal_code, city_id from address
+7.	Toon de naam en email adress van alle customers
+Select first_name, email from customer
+8.	Toon  de naam, description en release year van alle films.
+select title, description, release_year from film
+9.	Toon van alle customers de achternaam en de datum wanneer ze lid zijn geworden
+select last_name,create_date from customer
+
+10.	Toon alle gegevens van alle films
+select * from film
+11.	Toon het film id en de filmnaam van alle films
+select film_id, title  from film
+
+12.	Toon de rental id, de rental date en de return date
+select rental_id, rental_date, return_date from rental
+
+13.	Toon alle films met een rental duration van 6
+Select * from film where rental duration =6
+
+14.	 Toon alle films met de rating nc-17
+Select * from film where rating  = ”NC-17”;
+15.	Toon alle films met als special feature “Deleted scenes”
+              select * from film WHERE special_features ="deleted scenes";
+16.	Toon alleen de gegevens van de customer met achternaam woods. 
+select * from customer where last_name = "Woods"
+
+17.	Toon alle customers gesorteerd op achternaam aflopend
+select * from customer order by last_name desc
+
+18.	Toon alle acteurs gesorteerd op voornaam oplopend
+
+select * from actor order by first_name asc
+
+19.	Toon alle acteurs met de voornaam morgan gesorteerd op achternaam aflopend
+              Select * from actor where first_name = "Morgan" order by last_name desc;
+
+20.	Toon alle adressen uit het disctict “Texas”
+select * from address WHERE district = "Texas"
+
+21.	Welke adress heeft telefoonnummer 10655648674
+Select * From address where phone = "10655648674"
+
+22.	Welke customers zitten bij store-id 1
+
+Select * From customer where store_id = "1"
+
+
+23.	Welke customer  heeft het emailadress  PAUL.TROUT@sakilacustomer.org en wat is zijn store-id
+Select * From customer where email = "paul.trout@sakilacustomer.org"
+
+24.	Laat alle films zien waarbij de rental rate 2,99 is
+Select * From film where rental_rate = "2.99"
+
+25.	Laat zien welke verschillende ratings zijn er in de tabel film 
+Select distinct rating from film;

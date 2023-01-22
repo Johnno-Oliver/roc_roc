@@ -1,0 +1,43 @@
+Trunks aanmaken  
+
+Ga naar Technisch ontwerp 
+Bekijk Trunk poorten 
+
+
+Zet Switches neer. 
+Verbind de Switches met Copper Cross Over. 
+
+Ga naar de MLS 
+Zet Alle poorten op Trunks 
+
+Controleer welke poorten er gedaan moeten worden. (De Poorten van de MLS naar de Switches)
+
+Op de MLS
+enable 
+Configure terminal 
+Interface range gig 1/0/1 - gig 1/0/5 
+no shutdown 
+Switchport mode trunk 
+Switchport Trunk Native vlan 99 gebruik de vlan die Trunk moet hebben. 
+
+int range 0/23 - fa 0/24 
+switchport mode trunk 
+switchport trunk  native vlan 99
+
+interface gi 0/1 
+switchport mode trunk
+switchport trunk  native vlan 99
+
+herhaal stappen op andere switches
+
+Ga naar de Switch 
+enable 
+conf t 
+(Zet aangewezen Poorten in Trunks op de Switch) doe de poorten switch naar switch en switch naar MLS !!!! 
+Interface Range 
+Switchport Mode Trunk 
+Switchport Trunk Native vlan gebruik de juiste vlan!! 
+
+Herhaal deze stappen voor de volgende Switches. 
+
+

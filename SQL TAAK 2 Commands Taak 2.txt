@@ -1,0 +1,69 @@
+Les 2	Onderwerpen:	
+Logische vergelijkingen <, >, =, >=, <=, <>,  NOT, IS NULL, AND, OR, #...#, LIKE, BETWEEN, YEAR(), MONTH(), DAY(),  DATE(), -, + 
+
+--- Van alle vragen willen wij de vraag incl. SQL-statement hebben ---
+1.	Toon alle gegevens van uit de tabel rental waarbij de returndate op 2005-05-27 staat.
+select * from rental where return_date like"2005-05-27%" 
+2.	Toon  alle adressen die uit het districht alberta komen en met een city id van 300 
+select * from address where district ="alberta" and city_id =300
+3.	Toon alle gegevens uit de tabel payment waarbij het amount lager dan 4,99 dollar is.
+select * from payment where amount <4.99
+4.	Toon alle steden met een city id van 80 of hoger.
+select * from city where city_id >=80
+5.	Toon alle films met een rental duration van 3 of een rating “PG”.
+select * from film where rental_duration =3 or rating ="PG"
+6.	Toon alle films met een rental duration van 3 en een rating “R”
+select * from film where rental_duration =3 and rating ="R"
+
+7.	Toon alle films oplopend met een rental_rate van 4,99 of hoger en waarvan de lengte minder dan 100 minuten is.
+Select * from film where rental_rate >= 4.99 and length <= 100 order by title asc
+8.	Toon alle costumers wiens achternaam met een ‘M’ begint of met een city adres onder de 50.
+select * from customer where last_name like "M%" or  address_id =50
+
+9.	Toon alle steden die beginnen met al.
+
+select * from city where city like "al%"
+10.	 Toon alle postcodes die eindigen met 37.
+select * from address where postal_code like "%37"
+
+11.	Toon alle customers bij volledige naam wiens naam eindigt met een s of een id hebben tussen 45 en 55.
+       select * from customer where first_name like "%s" or customer_id between 45 and 55
+12.	 Toon alle gegevens uit de tabel rental waar de de rental date tussen 2005-05-25 en 2005-05-26 ligt.
+        Deze commando kan niet worden ingevoerd 
+
+
+13.	Laat alle costumer id’s zien waarbij de rental duur langer dan 2 dagen zijn.
+select customer_id 
+from rentals 
+where DATEDIFF(return_date,rental_date) > 2;
+
+14.	Bereken het aantal dagen dat een film gehuurd mag worden Laat dat vervolgens zien als kolom naam dagen.
+select film_id, title,
+(case when rental_duration = 3 then rental_rate *
+3 
+when rental_duration = 5 then rental_rate * 
+5
+else rental_rate * rental_duration end) as days 
+from film
+15.	Toon alle alle films die niet tussen id nummer 30 en 50 zitten. Gebruik NOT BETWEEN.
+select * from film where film_id not between "30" and "50"
+
+16.	Toon alle addressen met een lege zipcode
+select * from address where not postal_code
+17.	Toon alle films die een kortere lengte hebben dan 100 min
+select * from film where length <100
+
+18.	Toon alle gegevens van customers waarbij de letters G en S niet in de email voorkomen
+              select * from customer where email not like "G" and email not like 's'
+19.	Toon alle acteurs die de letters P en  S in de voorletters hebben zitten.
+select * from actor where first_name like "p%" and first_name like "S%"
+
+20.	Sorteer alle customers oplopend bij achternaam die een id hebben van 30 of minder.
+
+select * from customer where customer_id <30 order by last_name asc
+
+21.	Toon alle returndate’s met het jaar 2006
+
+select * from rental  where return_date  like “%2006%”
+
+

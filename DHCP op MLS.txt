@@ -1,0 +1,44 @@
+Deel 5 
+Op MLS Vlan 
+
+enable
+interface vlan 10 
+ip add (ip addresss)+ SUBNET 
+ip helper-address 11.11.11.14  Belangrijk !!!
+
+
+DHCP Server instellen 
+Let op veel punten mee te verdienen !!!! 
+
+op de mls (Multi layer Switch)
+enable 
+conf t 
+
+als je commando's niet meer weet gebruik vraagteken achter je command wat je hebt. Bijvoorbeeld- ip dhcp ? 
+
+begin met de addressen die je niet mag uitdelen/Excluded address 
+ip dhcp exluded-address (voer het ip addres in) die niet mogen gebruikt worden ///// Of typ E en dan tab 
+Als je moet corrigeren no ip dhcp excluded-address (ip adress)
+
+do show run      in configuration mode !!
+maak screenshot van je werk.
+
+
+Nu dhcp pool 
+enable 
+conf t
+ip dhcp pool VLAN10 {gebruik het Vlan wat aangegeven is voor de pool !!!}
+default-router ip address (default ip aangeven)
+dns-server (ip dns server) Voorbeeld 11.11.11.14 
+network (ip adress van network + subnet) 
+
+een pool is nu compleet herhaal deze stappen voor de volgende pools. 
+
+
+
+
+
+
+
+
+

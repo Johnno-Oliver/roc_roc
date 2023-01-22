@@ -1,0 +1,35 @@
+Les 4	Onderwerpen:	
+INNER JOIN
+
+--- Van alle vragen willen wij de vraag incl. SQL-statement hebben ---
+1.	Laat alle steden en de landen waar het bij hoort zien
+SELECT city.city, country FROM city
+
+Inner join country on city, country_id = city, country_id
+2.	Laat de taal en titel van alle films zien 
+SELECT film. title, language.name FROM film INNER JOIN language ON film.language_id = language.language_id
+
+WHERE name = "english"
+
+ORDER BY title ASC
+
+3.	Welke films verhuurt store_id 1
+select * from film inner join store on film.film_id = store.store_id where store_id = "1"
+4.	Laat tevens ook de naam zien bij vraag 3.
+select * from film inner join store on film.film_id = store.store_id
+inner join customer on customer.first_name where film_id = 1;
+
+5.	Laat alle films en de daar bij horende acteur zien. 
+select * from actor inner join film on actor. actor_id = film.film_id
+
+6.	Laat de adressen zien van alle customers die in het district texas wonen.
+select * from city inner join customer on customer.address_id = city.city where city = "Texas"
+
+7.	Laat alle films zien die klant met id nummer 26 heeft gehuurd. 
+select title, description, film_id from film where film_id = "26"
+
+8.	Hoeveel films heeft customer_id 35 gehuurd.
+SELECT * FROM film WHERE film_id = "35"
+
+  
+

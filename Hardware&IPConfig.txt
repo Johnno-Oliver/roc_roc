@@ -1,0 +1,63 @@
+IP & Hardware Configuratie.
+
+
+Pak de aangegeven hardware 
+Let op het interface vervolgens op IP-address 
+
+
+Lees het Document Technisch Ontwerp 
+Hardware Laptop configureren Wifi
+1. Navigeer naar de hardware Selecteer vervolgens Config. 
+2. Onder Interface Selecteer Port 0 klik op On. 
+3. Zet Bandwith & Duplex op Auto 
+4. Navigeer naar Port 1 
+5. Zet het juiste SSID in die nodig is volgens het Document. Controleer op welk numme je zit kwa Switch. 
+6. Selecteer beveiliging WPA2-PSK en voer het juiste wachtwoord in.
+
+Ga naar de volgende Switch en pas dezelfde principes toe/ wijzig echter de waardes die aangegeven staan op de juiste manier
+lees de documentatie goed. 
+
+
+VOOR DE LAPTOPS !!! 
+Selecteer Laptop 
+zet hem uit ! 
+Zet de oude kaart er uit.
+Selecteer links WPC300N Netwerk kaart en zet deze er nu in. 
+
+Selecteer Desktop- pc wireless- Connect- Selecteer juiste vlan voor laptop- Connect- Wachtwoord invullen. Wifi voltooid. 
+
+
+VOOR DE PRINTERS !!!
+Ga naa Technisch Ontwerp en bekijk ip addressen printers. 
+Selecteer Printer 
+Config- Interface- FasthEthernet0
+Port Status On 
+Bandwith Auto/Duplex Auto
+Voer IP in. 
+
+Vervolgens Gateway invoeren. 
+Global-Settings-Gateway/DNSIPv4 
+Voer default in. 
+DNS invoeren default van Server.
+
+
+
+DHCP Client invullen 
+
+CLI 
+Enable 
+conf T
+
+Gebruik aangegeven interface van de Technisch ontwerp. 
+(Voorbeeld)
+Interface gig 0/0/1
+Geef het de juiste Description let op niet verplicht wel handig ! 
+Description DHCP Client.
+ip address dhcp 
+no shut 
+
+
+Zet Ip op een poort in een switch (MLS)
+enable 
+interface gi 1/0/24
+no switchport 
