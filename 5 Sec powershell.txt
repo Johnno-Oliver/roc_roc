@@ -1,0 +1,21 @@
+# Defineer een teken dat op het beeldscherm beweegt
+$width = 20
+$height = 10 #Maak het teken aan
+for ($i = 0; $i -lt $width; $i++) {
+    Write-Host -NoNewLine "<:>"
+    Start-Sleep -Milliseconds 15
+}
+Write-Host "" # Maak het middenstuk van het teken aan
+for ($j = 0; $j -lt $height - 2; $j++) {
+    Write-Host -NoNewLine "(---)"
+    for ($i = 0; $i -lt $width - 2; $i++) {
+        Write-Host -NoNewLine " "
+        Start-Sleep -Milliseconds 15
+    }
+    Write-Host "<<<"
+    Start-Sleep -Milliseconds 15
+} # Maak het onderste gedeelte van het teken aan
+for ($i = 0; $i -lt $width; $i++) {
+    Write-Host -NoNewLine "<:>"
+    Start-Sleep -Milliseconds 15
+}
